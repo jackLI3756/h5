@@ -1,37 +1,192 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html>
 
-You can use the [editor on GitHub](https://github.com/jackLI3756/MyH5/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+<head>
+    <meta charset="utf-8" />
+    <style>
+        /*最外层容器样式*/
+        .wrap {
+            width: 200px;
+            height: 200px;
+            margin: 200px;
+            position: relative;
+        }
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+        /*包裹所有容器样式*/
+        .cube {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg) rotateY(-80deg);
+            animation: rotate linear 20s infinite;
+        }
 
-### Markdown
+        @-webkit-keyframes rotate {
+            from {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+        .cube div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            opacity: 0.8;
+            transition: all .4s;
+        }
 
-```markdown
-Syntax highlighted code block
+        /*定义所有图片样式*/
+        .pic {
+            width: 200px;
+            height: 200px;
+        }
 
-# Header 1
-## Header 2
-### Header 3
+        .cube .out_front {
+            transform: rotateY(0deg) translateZ(100px);
+        }
 
-- Bulleted
-- List
+        .cube .out_back {
+            transform: translateZ(-100px) rotateY(180deg);
+        }
 
-1. Numbered
-2. List
+        .cube .out_left {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
 
-**Bold** and _Italic_ and `Code` text
+        .cube .out_right {
+            transform: rotateY(90deg) translateZ(100px);
+        }
 
-[Link](url) and ![Image](src)
-```
+        .cube .out_top {
+            transform: rotateX(90deg) translateZ(100px);
+        }
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+        .cube .out_bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
 
-### Jekyll Themes
+        /*定义小正方体样式*/
+        .cube span {
+            display: block;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jackLI3756/MyH5/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+        .cube .in_pic {
+            width: 100px;
+            height: 100px;
+        }
 
-### Support or Contact
+        .cube .in_front {
+            transform: rotateY(0deg) translateZ(50px);
+        }
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+        .cube .in_back {
+            transform: translateZ(-50px) rotateY(180deg);
+        }
+
+        .cube .in_left {
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+
+        .cube .in_right {
+            transform: rotateY(90deg) translateZ(50px);
+        }
+
+        .cube .in_top {
+            transform: rotateX(90deg) translateZ(50px);
+        }
+
+        .cube .in_bottom {
+            transform: rotateX(-90deg) translateZ(50px);
+        }
+
+        /*鼠标移入后样式*/
+        .cube:hover .out_front {
+            transform: rotateY(0deg) translateZ(200px);
+        }
+
+        .cube:hover .out_back {
+            transform: translateZ(-200px) rotateY(180deg);
+        }
+
+        .cube:hover .out_left {
+            transform: rotateY(-90deg) translateZ(200px);
+        }
+
+        .cube:hover .out_right {
+            transform: rotateY(90deg) translateZ(200px);
+        }
+
+        .cube:hover .out_top {
+            transform: rotateX(90deg) translateZ(200px);
+        }
+
+        .cube:hover .out_bottom {
+            transform: rotateX(-90deg) translateZ(200px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 外层最大容器 -->
+    <div class="wrap">
+        <!--包裹所有元素的容器-->
+        <div class="cube">
+            <!--前面图片 -->
+            <div class="out_front">
+                <img src="http://img.blog.csdn.net/20170716094246620" class="pic" />
+            </div>
+            <!--后面图片 -->
+            <div class="out_back">
+                <img src="http://img.blog.csdn.net/20170716094334594" class="pic" />
+            </div>
+            <!--左面图片 -->
+            <div class="out_left">
+                <img src="http://img.blog.csdn.net/20170716094400013" class="pic" />
+            </div>
+            <!--右面图片 -->
+            <div class="out_right">
+                <img src="http://img.blog.csdn.net/20170716094422331" class="pic" />
+            </div>
+            <!--上面图片 -->
+            <div class="out_top">
+                <img src="http://img.blog.csdn.net/20170716094444434" class="pic" />
+            </div>
+            <!--下面图片 -->
+            <div class="out_bottom">
+                <img src="http://img.blog.csdn.net/20170716094504432" class="pic" />
+            </div>
+
+            <!--小正方体 -->
+            <span class="in_front">
+                <img src="http://img.blog.csdn.net/20170716120759718" class="in_pic" />
+            </span>
+            <span class="in_back">
+                 <img src="http://img.blog.csdn.net/20170716120759718" class="in_pic" />
+            </span>
+            <span class="in_left">
+                <img src="http://img.blog.csdn.net/20170716120759718" class="in_pic" />
+            </span>
+            <span class="in_right">
+                <img src="http://img.blog.csdn.net/20170716120759718" class="in_pic" />
+            </span>
+            <span class="in_top">
+                <img src="http://img.blog.csdn.net/20170716120759718" class="in_pic" />
+            </span>
+            <span class="in_bottom">
+                <img src="http://img.blog.csdn.net/20170716120759718" class="in_pic" />
+            </span>
+        </div>
+
+    </div>
+</body>
+
+</html>
